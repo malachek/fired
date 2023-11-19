@@ -39,9 +39,10 @@ public class PlayerController : MonoBehaviour
     float dashSpeed;
     [SerializeField]
     float dashTime;
+    [SerializeField] TrailRenderer tr;
     Vector2 dashDir;
-    bool isDashing;
     bool canDash = true;
+    bool isDashing;
 
 
     void Start()
@@ -86,14 +87,7 @@ public class PlayerController : MonoBehaviour
 
         if (dashInput && canDash)
         {
-            isDashing = true;
-            canDash = false;
-            dashDir = new Vector2(inputX, Input.GetAxisRaw("Vertical"));
-            if (dashDir == Vector2.zero)
-            {
-                dashDir = new Vector2(transform.localScale.x, 0);
-            }
-            StartCoroutine(StopDashing());
+            StartCoroutine(Dash());
         }
 
         if (isDashing)
@@ -103,10 +97,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator StopDashing()
+    private IEnumerator Dash()
     {
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        isDashing = true;
+        canDash = false;
+        dashDir = new Vector2(transform.localScale.x, Input.GetAxisRaw("Vertical"));
+        tr.emitting = true;
+
+        rb.gravityScale = originalGravity;
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
+        tr.emitting = false;
     }
 
     void Flip()
