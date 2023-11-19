@@ -8,13 +8,7 @@ public class CameraTarget : MonoBehaviour
     PlayerController pc;
 
     float playerPosition;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         playerPosition = pc.transform.position.y;
