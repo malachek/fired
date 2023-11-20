@@ -196,15 +196,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9d1f2b3d4be61ce469fa7f5a66d08c04, type: 3}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.35, y: 11.73}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &158307183
@@ -1023,37 +1023,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1038282244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85bacc2f77177ce438a2b41f0abe2409, type: 3}
+  m_Script: {fileID: 11500000, guid: 74c1e9010f615415082224160cce8e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1038282246}
-  inputX: 0
-  jumpInput: 0
-  dashInput: 0
-  facingRight: 1
-  checkRadius: 0.2
-  dashDir: {x: 0, y: 0}
-  canDash: 1
-  isDashing: 0
-  isWallSliding: 0
-  isWallJumping: 0
-  wallJumpingDirection: 0
-  wallJumpingCounter: 0
-  moveSpeed: 7
-  jumpSpeed: 30
-  groundCheck: {fileID: 158307184}
+  rb: {fileID: 0}
+  moveSpeed: 0
+  jumpSpeed: 0
+  groundCheck: {fileID: 0}
   whatIsGround:
-    m_Bits: 256
-  dashSpeed: 30
-  dashTime: 0.25
-  tr: {fileID: 1038282251}
-  wallSlidingSpeed: 2
-  wallCheck: {fileID: 1960881783}
-  whatIsWall:
+    serializedVersion: 2
     m_Bits: 0
-  wallJumpingTime: 0.2
-  wallJumpingDuration: 0.2
-  wallJumpingPower: {x: 12, y: 25}
+  dashSpeed: 0
+  dashTime: 0
+  tr: {fileID: 0}
+  wallSlidingSpeed: 0
+  wallCheck: {fileID: 0}
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 0
+  wallJumpingTime: 0
+  wallJumpingDuration: 0
+  wallJumpingPower: {x: 0, y: 0}
 --- !u!96 &1038282251
 TrailRenderer:
   serializedVersion: 3
@@ -1176,6 +1166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1411076443}
+  - component: {fileID: 1411076444}
   m_Layer: 0
   m_Name: Camera Target
   m_TagString: Untagged
@@ -1198,6 +1189,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1038282249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1411076444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411076442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d40d39f4436c334faaeea71d5d328ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pc: {fileID: 1038282250}
 --- !u!1 &1493243812
 GameObject:
   m_ObjectHideFlags: 0
