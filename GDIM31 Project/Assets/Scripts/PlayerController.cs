@@ -129,7 +129,13 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
     }
-
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Finish"))
+        {
+            Debug.Log("GameOver");
+        }
+    }
     private IEnumerator Dash()
     {
         float originalGravity = rb.gravityScale;
