@@ -16,7 +16,7 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     [SerializeField]
     Animator animator;
