@@ -5052,6 +5052,7 @@ GameObject:
   - component: {fileID: 1464396389}
   - component: {fileID: 1464396388}
   - component: {fileID: 1464396387}
+  - component: {fileID: 1464396391}
   - component: {fileID: 1464396386}
   m_Layer: 0
   m_Name: Player
@@ -5187,6 +5188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1464396388}
   animator: {fileID: 1203803730}
+  stats: {fileID: 1464396391}
   moveSpeed: 7
   jumpSpeed: 30
   groundCheck: {fileID: 792673208}
@@ -5295,6 +5297,20 @@ Transform:
   - {fileID: 754915750}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1464396391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464396385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a79820e3d5c448db897618718b32093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  dashDamage: 30
 --- !u!1 &1472948010
 GameObject:
   m_ObjectHideFlags: 0

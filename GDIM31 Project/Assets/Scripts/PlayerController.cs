@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Animator animator;
 
+    [SerializeField]
+    PlayerStats stats;
+
     float inputX;
     bool jumpInput;
     bool dashInput;
@@ -31,6 +34,8 @@ public class PlayerController : MonoBehaviour
     Vector2 dashDir;
     bool canDash = true;
     bool isDashing;
+
+    bool canWallJump = true;
 
     bool isWallSliding;
     bool isWallJumping;
@@ -114,9 +119,9 @@ public class PlayerController : MonoBehaviour
         
 
 
-        if (IsGrounded()) { canDash = true; }
+        if (IsGrounded()) { canDash = true; canWallJump = true; }
 
-        if (dashInput && canDash)
+        if (dashInput && canDash && stats.HealthForDash())
         {
             StartCoroutine(Dash());
         }
@@ -135,8 +140,9 @@ public class PlayerController : MonoBehaviour
             wallJumpingCounter -= Time.deltaTime;
         }
 
-        if (jumpInput && isWallSliding)
+        if (jumpInput && canWallJump && isWallSliding)
         {
+            canWallJump = false;
             StartCoroutine(WallJump());
         }
 
@@ -163,8 +169,10 @@ public class PlayerController : MonoBehaviour
         dashDir = new Vector2(transform.localScale.x, Input.GetAxisRaw("Vertical"));
         tr.emitting = true;
 
-        rb.gravityScale = originalGravity;
+        stats.DashDamage();
         yield return new WaitForSeconds(dashTime);
+
+        rb.gravityScale = originalGravity;
         isDashing = false;
         tr.emitting = false;
     }
