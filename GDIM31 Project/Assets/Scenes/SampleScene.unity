@@ -141,6 +141,8 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &121188710
 Transform:
   m_ObjectHideFlags: 0
@@ -157,6 +159,12 @@ Transform:
   m_Father: {fileID: 1038282249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &121188711
+=======
+--- !u!212 &71662617
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
+=======
+--- !u!212 &71662617
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
 =======
 --- !u!212 &71662617
 >>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
@@ -200,8 +208,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_SortingOrder: 0
   m_Sprite: {fileID: -989252304, guid: a73d48a4e046946d6b68bd96c0fa1cf2, type: 3}
+=======
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: 99101cb69803988488a98d4e6a01e377, type: 3}
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
+=======
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: 99101cb69803988488a98d4e6a01e377, type: 3}
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
 =======
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 99101cb69803988488a98d4e6a01e377, type: 3}
@@ -211,7 +229,15 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 0.32, y: 0.32}
+=======
+  m_Size: {x: 2.86, y: 2}
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
+=======
+  m_Size: {x: 2.86, y: 2}
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
 =======
   m_Size: {x: 2.86, y: 2}
 >>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
@@ -220,6 +246,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!95 &121188712
 Animator:
@@ -263,6 +291,12 @@ GameObject:
 =======
 --- !u!4 &71662618
 >>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
+=======
+--- !u!4 &71662618
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
+=======
+--- !u!4 &71662618
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,10 +312,16 @@ Transform:
   m_Father: {fileID: 1038282249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!95 &158307185
 Animator:
   serializedVersion: 5
 =======
+=======
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
+=======
+>>>>>>> parent of a8f85cb (Merge pull request #10 from malachek/jacklyn-sprites)
 --- !u!1 &105651162
 GameObject:
   m_ObjectHideFlags: 0
