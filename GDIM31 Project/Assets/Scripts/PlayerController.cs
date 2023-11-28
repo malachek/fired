@@ -16,7 +16,10 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
+
+    [SerializeField]
+    Animator animator;
 
     float inputX;
     bool jumpInput;
@@ -82,7 +85,14 @@ public class PlayerController : MonoBehaviour
             return;
         }
         rb.velocity = new Vector2(inputX * moveSpeed, rb.velocity.y);
+        animator.SetBool("Running", Mathf.Abs(inputX) > 0.1f);
+
+        if (Mathf.Abs(inputX) <= 0.1f)
+        {
+            animator.SetBool("Running", false);
+        }
     }
+
 
     void Update()
     {
@@ -94,7 +104,15 @@ public class PlayerController : MonoBehaviour
         if (jumpInput && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            animator.SetBool("Jump", true);
         }
+        else
+        {
+            animator.SetBool("Jump", false);
+        }
+
+        
+
 
         if (IsGrounded()) { canDash = true; }
 
