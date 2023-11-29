@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 
 /*
@@ -158,6 +159,7 @@ public class PlayerController : MonoBehaviour
         if (col.CompareTag("Finish"))
         {
             Debug.Log("GameOver");
+            SceneManager.LoadScene(0);
         }
     }
     private IEnumerator Dash()

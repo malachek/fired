@@ -5310,7 +5310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  dashDamage: 30
+  dashDamage: 0
 --- !u!1 &1472948010
 GameObject:
   m_ObjectHideFlags: 0
