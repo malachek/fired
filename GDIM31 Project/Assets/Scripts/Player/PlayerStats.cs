@@ -11,15 +11,11 @@ public class PlayerStats : MonoBehaviour
     float dashDamage;
 
     float m_Health;
-    public int cash; //might have to put this elsewhere
-    CoinCounter coinCounter;
 
 
     void Awake()
     {
         m_Health = maxHealth;
-        cash = 0;
-        coinCounter = FindObjectOfType<CoinCounter>();
     }
 
     public bool HealthForDash()
@@ -39,6 +35,7 @@ public class PlayerStats : MonoBehaviour
         if (m_Health <= 0)
         {
             Debug.Log("GAME OVER");
+            GameStateManager.GameOver();
         }
         Debug.Log(m_Health);
     }
@@ -51,13 +48,6 @@ public class PlayerStats : MonoBehaviour
             m_Health = maxHealth;
         }
         Debug.Log(m_Health);
-    }
-
-    public void CollectCash(int amount)
-    {
-        cash++;
-        coinCounter.SetCoinDisplay(amount);
-        Debug.Log(cash);
     }
 
 }

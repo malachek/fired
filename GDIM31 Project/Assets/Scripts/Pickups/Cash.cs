@@ -6,9 +6,14 @@ public class Cash : Pickup
 {
     [SerializeField]
     int value;
+    GameStateManager state;
+    private void Start()
+    {
+        state = FindObjectOfType<GameStateManager>();
+    }
     protected override void PickedUp()
     {
-        player.CollectCash(value);
+        state.CollectCash(value);
         base.PickedUp();
     }
 }
