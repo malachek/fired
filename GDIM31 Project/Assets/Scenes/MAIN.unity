@@ -9723,14 +9723,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WASD: Movement Keys
+  m_text: 'WASD: Movement Keys, Shift: Dash
 
-    Shift: Dash
-
-    SpaceBar: Jump
-
-    Jump + Wall
-    = Wall Jump'
+    SpaceBar: Jump, Jump + Wall = Wall
+    Jump'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9860,7 +9856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.96, y: -7.62}
+  m_AnchoredPosition: {x: 7.41, y: -7.62}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1790979986
@@ -9963,6 +9959,10 @@ PrefabInstance:
       propertyPath: distance
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2579976775022055073, guid: 7d34c712efb38db4399b101d49d9b664, type: 3}
+      propertyPath: m_Damage
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7588117076082742957, guid: 7d34c712efb38db4399b101d49d9b664, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
@@ -10022,11 +10022,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3825211728796287033, guid: fad5c6325e47b9a419f06f3c002e0e1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: 3825211728796287033, guid: fad5c6325e47b9a419f06f3c002e0e1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.37
       objectReference: {fileID: 0}
     - target: {fileID: 3825211728796287033, guid: fad5c6325e47b9a419f06f3c002e0e1b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10083,11 +10083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2959634884384866459, guid: aa2e33685ad8953428b9fe475255eede, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.04
       objectReference: {fileID: 0}
     - target: {fileID: 2959634884384866459, guid: aa2e33685ad8953428b9fe475255eede, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 8.96
       objectReference: {fileID: 0}
     - target: {fileID: 2959634884384866459, guid: aa2e33685ad8953428b9fe475255eede, type: 3}
       propertyPath: m_LocalPosition.z
