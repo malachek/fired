@@ -14,6 +14,11 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI textElement;
 
+    [SerializeField]
+    TextMeshProUGUI textCashCount;
+
+    int m_MaxCash;
+    int m_CurrentCash = 0;
     int m_HealthBarIndex;
 
 
@@ -25,6 +30,9 @@ public class PlayerStats : MonoBehaviour
         {
             healthPoint.enabled = true;
         }
+        var totalCash = Object.FindObjectsOfType<Cash>();
+        m_MaxCash = totalCash.Length;
+        textCashCount.text = $"${m_CurrentCash}/{m_MaxCash}";
     }
 
     public bool HealthForDash()
@@ -34,18 +42,15 @@ public class PlayerStats : MonoBehaviour
         {
             StartCoroutine(LevelTextDisplay("Low HP, Can Not Dash"));
         }
-        Debug.Log("RETURN");
         return (willLive);
     }
 
     public void TakeDamage()
     {
-        
         healthPoints[m_HealthBarIndex].enabled = false;
         m_HealthBarIndex--;
         if (m_HealthBarIndex < 0)
         {
-            Debug.Log("GAME OVER");
             StartCoroutine(LevelTextDisplay("GAME OVER"));
             GameStateManager.GameOver();
         }
@@ -60,13 +65,18 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void CollectCash()
+    {
+        m_CurrentCash++;
+        textCashCount.text = $"${m_CurrentCash}/{m_MaxCash}";
+    }
+
     IEnumerator LevelTextDisplay(string text)
     {
-        Debug.Log("START NO");
+        Debug.Log(text);
         textElement.text = text;
         yield return new WaitForSeconds(1.5f);
         textElement.text = null;
-        Debug.Log("END NO");
     }
 
 }

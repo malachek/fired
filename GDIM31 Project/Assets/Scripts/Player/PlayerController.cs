@@ -226,7 +226,6 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(wallJumpingDuration);
         isWallJumping = false;
-        Debug.Log("" + transform.localScale.x + wallJumpingDirection);
     }
 
     private void StopWallJumping()
