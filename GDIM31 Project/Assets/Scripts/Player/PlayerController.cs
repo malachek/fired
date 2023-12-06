@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlayerStats stats;
 
+    // state manager
+    private enum State { idle, running, jumping, dash, hurt, dashhurt }
+    private State state = State.idle;
+
     float inputX;
     bool jumpInput;
     bool dashInput;
@@ -90,13 +94,8 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        rb.velocity = new Vector2(inputX * moveSpeed, rb.velocity.y);
-        animator.SetBool("Running", Mathf.Abs(inputX) > 0.1f);
 
-        if (Mathf.Abs(inputX) <= 0.1f)
-        {
-            animator.SetBool("Running", false);
-        }
+        HandleMovement();
     }
 
 
@@ -106,21 +105,18 @@ public class PlayerController : MonoBehaviour
         jumpInput = Input.GetKeyDown(KeyCode.Space);
         dashInput = Input.GetKeyDown(KeyCode.LeftShift);
 
-
-        if (jumpInput && IsGrounded())
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-            animator.SetBool("Jump", true);
-        }
-        else
-        {
-            animator.SetBool("Jump", false);
-        }
-
-        
-
+        HandleStateTransitions();
 
         if (IsGrounded()) { canDash = true; canWallJump = true; }
+
+        HandleMovement();
+
+        
+        if (jumpInput && IsGrounded())
+        {
+           rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+           animator.SetTrigger("JumpTrigger"); // jump animation trigger
+        }
 
         if (dashInput && canDash && stats.HealthForDash())
         {
@@ -154,6 +150,7 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
     }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Finish"))
@@ -162,6 +159,63 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
+    private void HandleMovement()
+    {
+        rb.velocity = new Vector2(inputX * moveSpeed, rb.velocity.y);
+        animator.SetBool("Running", Mathf.Abs(inputX) > 0.1f);
+
+        if (Mathf.Abs(inputX) <= 0.1f)
+        {
+            animator.SetBool("Running", false);
+        }
+    }
+
+    private void HandleStateTransitions()
+    {
+        Debug.Log("Current State: " + state);
+
+        switch (state)
+        {
+            case State.idle:
+                if (Mathf.Abs(inputX) > 0.1f)
+                {
+                    state = State.running;        
+                }
+                if (jumpInput && IsGrounded())
+                {
+                    state = State.jumping;
+                    animator.SetTrigger("JumpTrigger");
+                }
+                break;
+
+            case State.running:
+                if (Mathf.Abs(inputX) <= 0.1f)
+                {
+                    state = State.idle;
+                }
+                if (jumpInput && IsGrounded())
+                {
+                    state = State.jumping;
+                    animator.SetTrigger("JumpTrigger");
+                }
+                break;
+
+                // switches state to idle, but jump animation continues.
+                // this block of code could be very wrong idk
+            case State.jumping:
+                if (IsGrounded())
+                {
+                    state = State.idle;
+                    animator.SetBool("idle", true);
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+
     private IEnumerator Dash()
     {
         float originalGravity = rb.gravityScale;
