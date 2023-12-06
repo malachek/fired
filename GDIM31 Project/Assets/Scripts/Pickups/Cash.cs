@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Cash : Pickup
 {
-    [SerializeField]
-    int value;
-
     PlayerStats stats;
 
     GameStateManager state;

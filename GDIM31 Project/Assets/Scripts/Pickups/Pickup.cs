@@ -5,6 +5,9 @@ using UnityEngine;
 
 public abstract class Pickup : MonoBehaviour
 {
+    [SerializeField]
+    AudioSource pickUpSound;
+
     protected PlayerStats player;
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -17,6 +20,8 @@ public abstract class Pickup : MonoBehaviour
 
     protected virtual void PickedUp()
     {
+        Debug.Log(pickUpSound);
+        pickUpSound.Play();
         Destroy(gameObject);
     }
 }
