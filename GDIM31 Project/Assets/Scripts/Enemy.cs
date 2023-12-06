@@ -39,7 +39,6 @@ public class Enemy : MonoBehaviour
         {
             m_Timer = m_MaxTime;
             Flip();
-            Debug.Log("FPLIT");
         }
         if (m_FacingLeft)
         {
