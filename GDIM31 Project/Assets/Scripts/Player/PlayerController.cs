@@ -116,10 +116,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (isDashing) { return; }
+
         inputX = Input.GetAxis("Horizontal");
         jumpInput = Input.GetKeyDown(KeyCode.Space);
         dashInput = Input.GetKeyDown(KeyCode.LeftShift);
-
 
         if (jumpInput && jumpCoyote > 0f)
         {
@@ -130,9 +131,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("Jump", false);
         }
-
-        
-
 
         if (IsGrounded()) { canDash = true; canWallJump = true; jumpCoyote = .15f;}
 
@@ -185,7 +183,7 @@ public class PlayerController : MonoBehaviour
         dashDir = new Vector2(transform.localScale.x, Input.GetAxisRaw("Vertical"));
         tr.emitting = true;
 
-        stats.DashDamage();
+        stats.TakeDamage();
         yield return new WaitForSeconds(dashTime);
 
         rb.gravityScale = originalGravity;

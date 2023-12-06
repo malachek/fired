@@ -1,53 +1,72 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField]
-    float maxHealth;
+    Image[] healthPoints;
+    
     [SerializeField]
-    float dashDamage;
+    TextMeshProUGUI textElement;
 
-    float m_Health;
+    int m_HealthBarIndex;
 
 
     void Awake()
     {
-        m_Health = maxHealth;
+        textElement.text = null;
+        m_HealthBarIndex = 3;
+        foreach (Image healthPoint in healthPoints) 
+        {
+            healthPoint.enabled = true;
+        }
     }
 
     public bool HealthForDash()
     {
-        Debug.Log(m_Health - dashDamage);
-        return(m_Health - dashDamage > 0);
+        bool willLive = m_HealthBarIndex > 0;
+        if (!willLive)
+        {
+            StartCoroutine(LevelTextDisplay("Low HP, Can Not Dash"));
+        }
+        Debug.Log("RETURN");
+        return (willLive);
     }
 
-    public void DashDamage()
+    public void TakeDamage()
     {
-        TakeDamage(dashDamage);
-    }
-
-    public void TakeDamage(float damage)
-    {
-        m_Health -= damage;
-        if (m_Health <= 0)
+        
+        healthPoints[m_HealthBarIndex].enabled = false;
+        m_HealthBarIndex--;
+        if (m_HealthBarIndex < 0)
         {
             Debug.Log("GAME OVER");
+            StartCoroutine(LevelTextDisplay("GAME OVER"));
             GameStateManager.GameOver();
         }
-        Debug.Log(m_Health);
     }
 
-    public void Heal(float heal)
+    public void Heal()
     {
-        m_Health += heal;
-        if (m_Health > maxHealth)
+        if (m_HealthBarIndex < 3)
         {
-            m_Health = maxHealth;
+            m_HealthBarIndex++;
+            healthPoints[m_HealthBarIndex].enabled = true;
         }
-        Debug.Log(m_Health);
+    }
+
+    IEnumerator LevelTextDisplay(string text)
+    {
+        Debug.Log("START NO");
+        textElement.text = text;
+        yield return new WaitForSeconds(1.5f);
+        textElement.text = null;
+        Debug.Log("END NO");
     }
 
 }
