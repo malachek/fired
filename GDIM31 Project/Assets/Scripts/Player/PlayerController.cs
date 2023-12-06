@@ -17,7 +17,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
 
     [SerializeField]
     Animator animator;
@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
 
     bool isWallSliding;
     bool isWallJumping;
+    
+    float wallSlidingCoyote = 0f;
+    float jumpCoyote = 0f;
 
     float wallJumpingDirection;
     float wallJumpingCounter;
@@ -90,6 +93,17 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
+        if (wallSlidingCoyote > 0)
+        {
+            wallSlidingCoyote -= Time.deltaTime;
+        }
+
+        if (jumpCoyote > 0)
+        {
+            jumpCoyote -= Time.deltaTime;
+        }
+
         rb.velocity = new Vector2(inputX * moveSpeed, rb.velocity.y);
         animator.SetBool("Running", Mathf.Abs(inputX) > 0.1f);
 
@@ -107,7 +121,7 @@ public class PlayerController : MonoBehaviour
         dashInput = Input.GetKeyDown(KeyCode.LeftShift);
 
 
-        if (jumpInput && IsGrounded())
+        if (jumpInput && jumpCoyote > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
             animator.SetBool("Jump", true);
@@ -120,7 +134,7 @@ public class PlayerController : MonoBehaviour
         
 
 
-        if (IsGrounded()) { canDash = true; canWallJump = true; }
+        if (IsGrounded()) { canDash = true; canWallJump = true; jumpCoyote = .15f;}
 
         if (dashInput && canDash && stats.HealthForDash())
         {
@@ -129,10 +143,10 @@ public class PlayerController : MonoBehaviour
 
         if (isWallSliding)
         {
-            isWallJumping = false;
             wallJumpingDirection = -transform.localScale.x;
+            wallSlidingCoyote = .2f;
+            isWallJumping = false;
             wallJumpingCounter = wallJumpingTime;
-
             CancelInvoke(nameof(StopWallJumping));
         }
 
@@ -141,7 +155,7 @@ public class PlayerController : MonoBehaviour
             wallJumpingCounter -= Time.deltaTime;
         }
 
-        if (jumpInput && canWallJump && isWallSliding)
+        if (jumpInput && canWallJump && wallSlidingCoyote > 0f)
         {
             canWallJump = false;
             StartCoroutine(WallJump());
@@ -197,9 +211,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator WallJump()
     {
-        isWallJumping = true;
-        rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
-        wallJumpingCounter = 0f;
+        if (!IsWalled()){wallJumpingDirection *= -1;}
 
         if (transform.localScale.x != wallJumpingDirection)
         {
@@ -208,8 +220,15 @@ public class PlayerController : MonoBehaviour
             Scaler.x *= -1;
             transform.localScale = Scaler;
         }
+        isWallJumping = true;
+        Vector2 force = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+        rb.AddForce(force, ForceMode2D.Impulse);
+        //rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+        wallJumpingCounter = 0f;
+
         yield return new WaitForSeconds(wallJumpingDuration);
         isWallJumping = false;
+        Debug.Log("" + transform.localScale.x + wallJumpingDirection);
     }
 
     private void StopWallJumping()
