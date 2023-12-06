@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Levels:
-  - MAIN
+  - Level 1
   - Level 2
   - Level 3
   m_TitleSceneName: TitleMenu
