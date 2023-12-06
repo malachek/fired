@@ -17,6 +17,11 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI textCashCount;
 
+    [SerializeField]
+    TextMeshProUGUI textTime;
+
+    public float stopWatch;
+
     int m_MaxCash;
     int m_CurrentCash = 0;
     int m_HealthBarIndex;
@@ -24,6 +29,7 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {
+        stopWatch = 0f;
         textElement.text = null;
         m_HealthBarIndex = 3;
         foreach (Image healthPoint in healthPoints) 
@@ -34,6 +40,26 @@ public class PlayerStats : MonoBehaviour
         m_MaxCash = totalCash.Length;
         textCashCount.text = $"${m_CurrentCash}/{m_MaxCash}";
     }
+
+    private void FixedUpdate()
+    {
+        stopWatch += Time.fixedDeltaTime;
+    }
+
+    private void Update()
+    {
+        int minutes = (int)stopWatch/60;
+        if (minutes > 59)
+        {
+            StartCoroutine(LevelTextDisplay("How did this take you an hour and you still aren't finished..."));
+            GameStateManager.GameOver();
+        }
+        int seconds = (int)stopWatch % 60;
+        int milliseconds = (int)(stopWatch % 1 * 60);
+        textTime.text = minutes.ToString("D2") + ":" + seconds.ToString("D2") + ":" + milliseconds.ToString("D2");
+    }
+
+    
 
     public bool HealthForDash()
     {
@@ -77,6 +103,14 @@ public class PlayerStats : MonoBehaviour
         textElement.text = text;
         yield return new WaitForSeconds(1.5f);
         textElement.text = null;
+    }
+
+    public string GetTime()
+    {
+        int minutes = (int)stopWatch / 60;
+        int seconds = (int)stopWatch % 60;
+        int milliseconds = (int)(stopWatch % 1 * 60);
+        return (minutes.ToString("D2") + ":" + seconds.ToString("D2") + ":" + milliseconds.ToString("D2"));
     }
 
 }
