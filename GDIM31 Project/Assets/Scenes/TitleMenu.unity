@@ -793,10 +793,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Levels:
   - MAIN
+  - Level 2
+  - Level 3
   m_TitleSceneName: TitleMenu
   m_DieSound: {fileID: 0}
   m_AudioSource: {fileID: 0}
-  CoinDisplay: {fileID: 0}
 --- !u!4 &1264926775
 Transform:
   m_ObjectHideFlags: 0
