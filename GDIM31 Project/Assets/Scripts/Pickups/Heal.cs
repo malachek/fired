@@ -8,7 +8,7 @@ public class Heal : Pickup
     int healAmount;
     protected override void PickedUp()
     {
-        player.Heal(healAmount);
+        player.Heal();
         base.PickedUp();
     }
 }

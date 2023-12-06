@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
         if(col.CompareTag("Player"))
         {
             PlayerStats player = col.GetComponent<PlayerStats>();
-            player.TakeDamage(m_Damage);
+            player.TakeDamage();
             Destroy(gameObject);
         }
     }
