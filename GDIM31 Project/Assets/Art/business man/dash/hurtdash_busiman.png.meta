@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d42f2a673cd79448a9872ff5413c7f83
+guid: 97c4ac445f3e44f5586e6c4dc0bbd0cf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
-  spriteBorder: {x: 4, y: 35, z: 36, w: 3}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,55 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grim_reaper._0
+      name: hurtdash_busiman_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 35
-        width: 28
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbbcea719377547a6ac24e1cf83006c2
-      internalID: -1121567481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grim_reaper._1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 35
+        x: 0
+        y: 0
         width: 32
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5c89487bfcd54c329b2727487fb039f
-      internalID: 1732142890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grim_reaper._2
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 3
-        width: 28
-        height: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73afaec79e0874305aa86c0b31d146fe
-      internalID: 484392832
+      spriteID: a4d13c29d4dc04437977cfd811318599
+      internalID: -619209387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grim_reaper._3
+      name: hurtdash_busiman_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 3
+        x: 32
+        y: 0
         width: 32
-        height: 31
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +145,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 074d736084d674c28be4d863b73608e3
-      internalID: 160499931
+      spriteID: d16cb1e2d8d2f4301b676b72213d2c99
+      internalID: 208623811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurtdash_busiman_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0123fc876d7704e7b9d31d21ab48e55c
+      internalID: 1395556843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurtdash_busiman_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4659e2d4c30444b9bbd2e3206cec178a
+      internalID: 1453067857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurtdash_busiman_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eae761112e6e4888972df0636132e93
+      internalID: -42211793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurtdash_busiman_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2b10537535e4f6c91df1b4f1cfef59
+      internalID: 1003259852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurtdash_busiman_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1145c48bc36c240a4b46335eabe09a4b
+      internalID: -1785168833
       vertices: []
       indices: 
       edges: []
@@ -197,17 +260,20 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grim_reaper._0: -1121567481
-      grim_reaper._1: 1732142890
-      grim_reaper._2: 484392832
-      grim_reaper._3: 160499931
+      hurtdash_busiman_0: -619209387
+      hurtdash_busiman_1: 208623811
+      hurtdash_busiman_2: 1395556843
+      hurtdash_busiman_3: 1453067857
+      hurtdash_busiman_4: -42211793
+      hurtdash_busiman_5: 1003259852
+      hurtdash_busiman_6: -1785168833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

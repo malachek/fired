@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d42f2a673cd79448a9872ff5413c7f83
+guid: a2338de1476aa482b83c0bac87d76810
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
-  spriteBorder: {x: 4, y: 35, z: 36, w: 3}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,55 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grim_reaper._0
+      name: hurt_busiman-Sheet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 35
-        width: 28
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbbcea719377547a6ac24e1cf83006c2
-      internalID: -1121567481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grim_reaper._1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 35
+        x: 0
+        y: 0
         width: 32
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5c89487bfcd54c329b2727487fb039f
-      internalID: 1732142890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grim_reaper._2
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 3
-        width: 28
-        height: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73afaec79e0874305aa86c0b31d146fe
-      internalID: 484392832
+      spriteID: 36839c6344e6a48b3819a0fb7bf372c7
+      internalID: -1361850845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grim_reaper._3
+      name: hurt_busiman-Sheet_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 3
+        x: 32
+        y: 0
         width: 32
-        height: 31
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 074d736084d674c28be4d863b73608e3
-      internalID: 160499931
+      spriteID: 033ed24a4b5964db8a2740155dd9b68d
+      internalID: 1726330489
       vertices: []
       indices: 
       edges: []
@@ -197,17 +155,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grim_reaper._0: -1121567481
-      grim_reaper._1: 1732142890
-      grim_reaper._2: 484392832
-      grim_reaper._3: 160499931
+      hurt_busiman-Sheet_0: -1361850845
+      hurt_busiman-Sheet_1: 1726330489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
