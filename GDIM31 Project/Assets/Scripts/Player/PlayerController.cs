@@ -203,13 +203,14 @@ public class PlayerController : MonoBehaviour
 
                 // switches state to idle, but jump animation continues.
                 // this block of code could be very wrong idk
-            case State.jumping:
-                if (IsGrounded())
+            //case State.jumping:
+                // is wrong i think but im gonna leave it here
+                /*if (IsGrounded())
                 {
                     state = State.idle;
                     animator.SetBool("idle", true);
-                }
-                break;
+                }*/
+                //break;
 
             default:
                 break;
