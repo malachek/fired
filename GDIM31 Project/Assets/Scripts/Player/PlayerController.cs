@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlayerStats stats;
 
+  
     float inputX;
     bool jumpInput;
     bool dashInput;
@@ -166,14 +167,26 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
     }
+    
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Finish"))
         {
             Debug.Log("GameOver");
-            SceneManager.LoadScene(0);
+            
+            
         }
     }
+
+    /*void UnlockNewLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
+        }
+    }*/
     private IEnumerator Dash()
     {
         float originalGravity = rb.gravityScale;

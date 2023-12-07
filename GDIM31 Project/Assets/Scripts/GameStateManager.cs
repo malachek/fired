@@ -9,6 +9,7 @@ public class GameStateManager : MonoBehaviour
 {
     [SerializeField]
     List<string> m_Levels = new List<string>();
+
     [SerializeField]
     string m_TitleSceneName;
 
@@ -58,6 +59,7 @@ public class GameStateManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(SceneManager.GetActiveScene().name);
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             GameStateManager.TogglePause();
@@ -76,6 +78,21 @@ public class GameStateManager : MonoBehaviour
                 OnLevelInit(m_CurrentCoins);
             }
         }
+    }
+
+    public static void LoadLevel(int levelNum)
+    {
+        m_State = GAMESTATE.PLAYING;
+
+        SceneManager.LoadScene(_instance.m_Levels[levelNum]);
+        
+    }
+
+    public static void OpenLevelSelect()
+    {
+        m_State = GAMESTATE.LEVELSELECT;
+
+        //SceneManager.LoadScene(Level)
     }
 
     public static void GameOver()
