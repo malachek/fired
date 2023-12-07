@@ -9,8 +9,12 @@ public class GameStateManager : MonoBehaviour
 {
     [SerializeField]
     List<string> m_Levels = new List<string>();
+
     [SerializeField]
     string m_TitleSceneName;
+
+    [SerializeField]
+    string m_LevelSelectSceneName;
 
     [SerializeField]
     private AudioClip m_DieSound;
@@ -58,6 +62,7 @@ public class GameStateManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(SceneManager.GetActiveScene().name);
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             GameStateManager.TogglePause();
@@ -70,7 +75,7 @@ public class GameStateManager : MonoBehaviour
         m_CurrentCoins = 0;
         if (_instance.m_Levels.Count > 0)
         {
-            SceneManager.LoadScene(_instance.m_Levels[0]);
+            SceneManager.LoadScene(_instance.m_LevelSelectSceneName);
             if (OnLevelInit != null)
             {
                 OnLevelInit(m_CurrentCoins);
@@ -78,10 +83,36 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    public static void LoadLevel(int levelNum)
+    {
+        m_State = GAMESTATE.PLAYING;
+
+        SceneManager.LoadScene(_instance.m_Levels[levelNum]);
+        
+    }
+
+    public static void OpenLevelSelect()
+    {
+        m_State = GAMESTATE.LEVELSELECT;
+
+        SceneManager.LoadScene(_instance.m_LevelSelectSceneName);
+    }
+
     public static void GameOver()
     {
+     
         m_State = GAMESTATE.MENU;
         SceneManager.LoadScene(_instance.m_TitleSceneName);
+    }
+
+    public static void UnlockNewLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
+        }
     }
 
     public static void ResetScene()

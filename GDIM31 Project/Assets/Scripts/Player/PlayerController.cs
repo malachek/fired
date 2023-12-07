@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlayerStats stats;
 
+  
     float inputX;
     bool jumpInput;
     bool dashInput;
@@ -166,14 +167,19 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
     }
+    
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Finish"))
         {
             Debug.Log("GameOver");
-            SceneManager.LoadScene(0);
+            //level completed
+            GameStateManager.UnlockNewLevel();
+            GameStateManager.OpenLevelSelect();
+            
         }
     }
+
     private IEnumerator Dash()
     {
         float originalGravity = rb.gravityScale;
