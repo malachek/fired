@@ -24,12 +24,8 @@ public class LevelMenu : MonoBehaviour
     }
 
     public void OpenLevel(int levelId)
-    {
-       
+    {  
         GameStateManager.LoadLevel(levelId - 1);
-
-        /*string levelName = "Level " + levelId;
-        SceneManager.LoadScene(levelName);*/
     }
 
     public void GoBackToMainMenu()
