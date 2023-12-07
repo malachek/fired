@@ -19,6 +19,7 @@ public class LevelMenu : MonoBehaviour
         }
         for (int i = 0; i < unlockedLevel; i++)
         {
+            if (i == 6) { return; }
             buttons[i].interactable = true;
         }
     }
