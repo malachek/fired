@@ -135,10 +135,10 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void CollectCash(int amount)
+    public void CollectCash()
     {
         m_CurrentCoins++;
-        //CoinDisplay.text = "$" + m_CurrentCoins;
+        PlayerPrefs.SetInt("TotalCoins", m_CurrentCoins);
         Debug.Log(m_CurrentCoins);
     }
 }

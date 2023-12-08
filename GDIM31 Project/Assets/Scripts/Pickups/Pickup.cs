@@ -20,8 +20,15 @@ public abstract class Pickup : MonoBehaviour
 
     protected virtual void PickedUp()
     {
-        Debug.Log(pickUpSound);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         pickUpSound.Play();
+        StartCoroutine(PlaySound());
+    }
+
+    IEnumerator PlaySound()
+    {
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }

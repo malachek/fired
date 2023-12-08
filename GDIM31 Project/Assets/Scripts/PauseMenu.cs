@@ -12,13 +12,10 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        Debug.Log("TogglePauseMenu called");
-        Debug.Log("Time.timeScale: " + Time.timeScale);
 
         if (pauseMenu.activeSelf)
         {
             // if pause menu is active, hide it and resume
-
             ResumeGame();
         }
         else
@@ -31,10 +28,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        
         GameStateManager.TogglePause();
         pauseMenu.SetActive(false);
-
     }
 
     public void RestartLevel()
@@ -45,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        GameStateManager.TogglePause();
         GameStateManager.GameOver();
     }
 }

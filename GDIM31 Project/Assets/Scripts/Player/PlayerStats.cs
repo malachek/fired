@@ -66,7 +66,7 @@ public class PlayerStats : MonoBehaviour
         bool willLive = m_HealthBarIndex > 0;
         if (!willLive)
         {
-            StartCoroutine(LevelTextDisplay("Low HP, Can Not Dash"));
+            StartCoroutine(LevelTextDisplay("Low HP, Can Not Dash. Press esc to open Pause Menu"));
         }
         return (willLive);
     }
@@ -113,4 +113,8 @@ public class PlayerStats : MonoBehaviour
         return (minutes.ToString("D2") + ":" + seconds.ToString("D2") + ":" + milliseconds.ToString("D2"));
     }
 
+    public void PlaySoundEffect(AudioSource sound)
+    {
+        sound.Play();
+    }
 }

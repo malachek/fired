@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     bool facingRight = true;
 
     float checkRadius = .2f;
+    float waitForJump = 0f;
 
     Vector2 dashDir;
     bool canDash = true;
@@ -85,6 +86,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (waitForJump > 0)
+        {
+            waitForJump -= Time.deltaTime;
+        }
+
         if (isDashing)
         {
             rb.velocity = dashDir.normalized * dashSpeed;
@@ -123,9 +129,10 @@ public class PlayerController : MonoBehaviour
         jumpInput = Input.GetKeyDown(KeyCode.Space);
         dashInput = Input.GetKeyDown(KeyCode.LeftShift);
 
-        if (jumpInput && jumpCoyote > 0f)
+        if (jumpInput && jumpCoyote > 0f && waitForJump <= 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            waitForJump = .2f;
             animator.SetBool("Jump", true);
         }
         else
@@ -215,6 +222,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator WallJump()
     {
+        if (IsGrounded()) { yield break; }
         if (!IsWalled()){wallJumpingDirection *= -1;}
 
         if (transform.localScale.x != wallJumpingDirection)

@@ -14,7 +14,7 @@ public class Cash : Pickup
     }
     protected override void PickedUp()
     {
-        //state.CollectCash(value);
+        state.CollectCash();
         stats.CollectCash();
         base.PickedUp();
     }
