@@ -6,14 +6,6 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
 
-/*
- * What we want
- * basic movement
- * wall jumps
- * clamped fall speed
- * dashing
- */
-
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
@@ -180,6 +172,7 @@ public class PlayerController : MonoBehaviour
         if (col.CompareTag("Finish"))
         {
             Debug.Log("GameOver");
+            GameStateManager.CollectCash(stats.m_CurrentCash, stats.m_MaxCash);
             //level completed
             GameStateManager.UnlockNewLevel();
             GameStateManager.OpenLevelSelect();

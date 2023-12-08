@@ -22,6 +22,9 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     private AudioSource m_AudioSource;
 
+    [SerializeField]
+    private LevelMenu levels;
+
     //public TextMeshProUGUI CoinDisplay = FindObjectOfType<CoinDisplay>();
 
     static int m_CurrentCoins;
@@ -59,8 +62,6 @@ public class GameStateManager : MonoBehaviour
         {
             Destroy(this);
         }
-
-        
 
     }
 
@@ -135,10 +136,13 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void CollectCash()
+    public static void CollectCash(int cash, int maxCash)
     {
-        m_CurrentCoins++;
-        PlayerPrefs.SetInt("TotalCoins", m_CurrentCoins);
-        Debug.Log(m_CurrentCoins);
+        int prevCash = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "Cash");
+        if (cash > prevCash)
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "Cash", cash);
+        }
+        Debug.Log(PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "Cash"));
     }
 }

@@ -22,8 +22,8 @@ public class PlayerStats : MonoBehaviour
 
     public float stopWatch;
 
-    int m_MaxCash;
-    int m_CurrentCash = 0;
+    public int m_MaxCash;
+    public int m_CurrentCash = 0;
     int m_HealthBarIndex;
 
 
@@ -113,8 +113,8 @@ public class PlayerStats : MonoBehaviour
         return (minutes.ToString("D2") + ":" + seconds.ToString("D2") + ":" + milliseconds.ToString("D2"));
     }
 
-    public void PlaySoundEffect(AudioSource sound)
-    {
-        sound.Play();
-    }
+    //public void PlaySoundEffect(AudioSource sound)
+    //{
+    //    sound.Play();
+    //}
 }

@@ -8012,7 +8012,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a520976ba84a7804885607965bbdafdd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -9958,6 +9958,8 @@ MonoBehaviour:
   textCashCount: {fileID: 1334595331}
   textTime: {fileID: 1503729266}
   stopWatch: 0
+  m_MaxCash: 0
+  m_CurrentCash: 0
 --- !u!1 &1472948010
 GameObject:
   m_ObjectHideFlags: 0
