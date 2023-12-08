@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartLevel()
     {
+        GameStateManager.TogglePause();
         GameStateManager.ResetScene();
     }
 
