@@ -113,8 +113,4 @@ public class PlayerStats : MonoBehaviour
         return (minutes.ToString("D2") + ":" + seconds.ToString("D2") + ":" + milliseconds.ToString("D2"));
     }
 
-    //public void PlaySoundEffect(AudioSource sound)
-    //{
-    //    sound.Play();
-    //}
 }

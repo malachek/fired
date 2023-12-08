@@ -25,8 +25,6 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     private LevelMenu levels;
 
-    //public TextMeshProUGUI CoinDisplay = FindObjectOfType<CoinDisplay>();
-
     static int m_CurrentCoins;
 
     static GameStateManager _instance;
