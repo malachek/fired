@@ -48,6 +48,7 @@ public class GameStateManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("Awake method called in " + gameObject.name);
         if (_instance == null)
         {
             _instance = this;
@@ -58,15 +59,9 @@ public class GameStateManager : MonoBehaviour
         {
             Destroy(this);
         }
-    }
 
-    private void Update()
-    {
-        Debug.Log(SceneManager.GetActiveScene().name);
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            GameStateManager.TogglePause();
-        }
+        
+
     }
 
     public static void NewGame()
@@ -96,6 +91,7 @@ public class GameStateManager : MonoBehaviour
         m_State = GAMESTATE.LEVELSELECT;
 
         SceneManager.LoadScene(_instance.m_LevelSelectSceneName);
+       
     }
 
     public static void GameOver()
@@ -117,6 +113,7 @@ public class GameStateManager : MonoBehaviour
 
     public static void ResetScene()
     {
+       
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -124,13 +121,17 @@ public class GameStateManager : MonoBehaviour
     {
         if (m_State == GAMESTATE.PLAYING)
         {
-            m_State = GAMESTATE.PAUSED;
+
+            m_State = GAMESTATE.PAUSED;             
             Time.timeScale = 0;
+            
         }
         else if (m_State == GAMESTATE.PAUSED)
         {
+
             m_State = GAMESTATE.PLAYING;
             Time.timeScale = 1;
+                        
         }
     }
 

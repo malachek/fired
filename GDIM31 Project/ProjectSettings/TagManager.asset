@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pickup
+  - Pause Menu
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
