@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class menuManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     public PauseMenu pauseMenu;
 
