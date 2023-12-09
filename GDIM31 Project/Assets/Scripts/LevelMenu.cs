@@ -11,30 +11,88 @@ public class LevelMenu : MonoBehaviour
     [SerializeField]
     Button[] buttons;
 
+
     [SerializeField]
-    TextMeshProUGUI[] cashDisplays;
+    private Sprite filledCashSprite;
+
+    [SerializeField]
+    private Sprite emptyCashSprite;
+
 
     private void Awake()
     {
-        
+
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;
-            cashDisplays[i].text = "";
+            //if (buttons[i] != null)
+            //{
+            //    buttons[i].gameObject.SetActive(false);
+            //}
         }
+
         for (int i = 0; i < unlockedLevel; i++)
         {
             if (i == 6) { return; }
             buttons[i].interactable = true;
 
-            string cashText = "$" + PlayerPrefs.GetInt("Level " + (i + 1) + "Cash") + "/3";
+            int cashEarned = PlayerPrefs.GetInt("Level " + (i + 1) + "Cash");
             //the int amount of cash is PlayerPrefs.GetInt("Level " + (i + 1) + "Cash")
 
-            cashDisplays[i].text = cashText;
-            // ^ remove this
+            DisplayCash(buttons[i], cashEarned);
+
         }
     }
+
+    public void DisplayCash(Button button, int cashEarned)
+    {
+        if (button != null)
+        {
+            button.gameObject.SetActive(true);
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (i < cashEarned)
+                {
+                    //filled in sprite
+                    button.transform.GetChild(i).GetComponent<Image>().GetComponent<Image>().sprite = filledCashSprite;
+                    
+                    //.sprite
+                    //    = Resources.Load<Sprite>("cash_filled");
+                }
+                else
+                {
+                    // empty sprite
+                    button.transform.GetChild(i).GetComponent<Image>().GetComponent<Image>().sprite = emptyCashSprite;
+                }
+            }
+        }
+    }
+
+    //private void Awake()
+    //{
+    //    int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
+    //    for (int i = 0; i < buttons.Length; i++)
+    //    {
+    //        buttons[i].interactable = false;
+    //        // Assuming you have star sprites assigned in the inspector
+    //        cashDisplays[i].sprite = emptyCashSprite;
+    //    }
+
+    //    for (int i = 0; i < unlockedLevel; i++)
+    //    {
+    //        if (i == 6) { return; }
+    //        buttons[i].interactable = true;
+
+    //        // Replace this logic with your actual cash-based condition
+    //        if (PlayerPrefs.GetInt("Level " + (i + 1) + "Cash") >= 1)
+    //        {
+    //            cashDisplays[i].sprite = filledCashSprite;
+    //        }
+    //    }
+    //}
 
     public void OpenLevel(int levelId)
     {  
