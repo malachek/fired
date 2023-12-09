@@ -6678,6 +6678,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5979868344424868676, guid: df82818a1992b42eb90d939399a11665, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ebede872b43c044489170a41a9d7e833, type: 3}
     - target: {fileID: 7825229719987886067, guid: df82818a1992b42eb90d939399a11665, type: 3}
       propertyPath: m_Name
       value: Fart
@@ -8176,6 +8180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2162893455244240376, guid: fad5c6325e47b9a419f06f3c002e0e1b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 212b043f08cc99b45bd3c2364ff50edb, type: 3}
     - target: {fileID: 3825211728796287033, guid: fad5c6325e47b9a419f06f3c002e0e1b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1
@@ -10335,6 +10343,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2162893455244240376, guid: fad5c6325e47b9a419f06f3c002e0e1b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 212b043f08cc99b45bd3c2364ff50edb, type: 3}
     - target: {fileID: 3825211728796287033, guid: fad5c6325e47b9a419f06f3c002e0e1b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.68
@@ -11357,6 +11369,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2162893455244240376, guid: fad5c6325e47b9a419f06f3c002e0e1b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 212b043f08cc99b45bd3c2364ff50edb, type: 3}
     - target: {fileID: 3825211728796287033, guid: fad5c6325e47b9a419f06f3c002e0e1b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.58

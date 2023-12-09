@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private AudioSource screamSoundEffect;
     [SerializeField]
     int m_Damage;
 
@@ -62,10 +63,19 @@ public class Enemy : MonoBehaviour
     {
         if(col.CompareTag("Player"))
         {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            screamSoundEffect.Play();
+            StartCoroutine(PlaySound());
             PlayerStats player = col.GetComponent<PlayerStats>();
             player.TakeDamage();
-            Destroy(gameObject);
         }
+        
+    IEnumerator PlaySound()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+    }
     }
 }
 
