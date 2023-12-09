@@ -27,8 +27,12 @@ public class LevelMenu : MonoBehaviour
         {
             if (i == 6) { return; }
             buttons[i].interactable = true;
+
             string cashText = "$" + PlayerPrefs.GetInt("Level " + (i + 1) + "Cash") + "/3";
+            //the int amount of cash is PlayerPrefs.GetInt("Level " + (i + 1) + "Cash")
+
             cashDisplays[i].text = cashText;
+            // ^ remove this
         }
     }
 
