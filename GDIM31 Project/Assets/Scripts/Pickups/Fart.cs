@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fart : Pickup
 {
+
     protected override void PickedUp()
     {
         TrailRenderer tr = player.GetComponent<TrailRenderer>();
