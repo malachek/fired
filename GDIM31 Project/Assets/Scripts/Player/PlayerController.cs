@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private AudioSource dashSound;
     [SerializeField]
     Rigidbody2D rb;
 
@@ -182,6 +183,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        dashSound.Play();
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         isDashing = true;
