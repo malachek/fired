@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     PlayerStats stats;
-
   
     float inputX;
     bool jumpInput;
