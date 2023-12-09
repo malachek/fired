@@ -9,7 +9,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     GameObject pauseMenu;
 
-
     public void TogglePauseMenu()
     {
 

@@ -17,13 +17,13 @@ public class GameStateManager : MonoBehaviour
     string m_LevelSelectSceneName;
 
     [SerializeField]
-    private AudioClip m_DieSound;
+    AudioClip m_DieSound;
 
     [SerializeField]
-    private AudioSource m_AudioSource;
+    AudioSource m_AudioSource;
 
     [SerializeField]
-    private LevelMenu levels;
+    LevelMenu levels;
 
     static int m_CurrentCoins;
 

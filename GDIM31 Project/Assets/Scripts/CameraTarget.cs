@@ -6,6 +6,7 @@ public class CameraTarget : MonoBehaviour
 {
     [SerializeField]
     PlayerController pc;
+
     [SerializeField]
     float offset;
 

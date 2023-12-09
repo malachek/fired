@@ -8,31 +8,14 @@ public class FartSpawner : MonoBehaviour
     GameObject fartPrefab;
 
     [Header("SpawnBoundaries")]
+    [SerializeField] float left;
+    [SerializeField] float right;
+    [SerializeField] float bottom;
+    [SerializeField] float top;
 
-    [SerializeField]
-    float left;
-
-    [SerializeField]
-    float right;
-
-    [SerializeField]
-    float bottom;
-
-    [SerializeField]
-    float top;
-
-    Vector3 randomPosition;
-
-    // Start is called before the first frame update
     void Start()
     {
-        randomPosition = new Vector3(Random.Range(left, right), Random.Range(bottom, top), 0);
-        Instantiate(fartPrefab, randomPosition, Quaternion.identity);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Spawn burrito in random location within confined area
+        Instantiate(fartPrefab, new Vector3(Random.Range(left, right), Random.Range(bottom, top), 0), Quaternion.identity);
     }
 }
