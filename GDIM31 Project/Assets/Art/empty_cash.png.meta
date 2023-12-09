@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 35ee876b8e0f1462784e442bc47354db
+guid: 7abbcaaffd9ad4038bcd1827b694b713
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 32, y: 72, z: 20, w: 11}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,11 +110,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cash_sprite_0
+      name: empty_cash_0
       rect:
         serializedVersion: 2
         x: 32
-        y: 20
+        y: 72
         width: 48
         height: 17
       alignment: 0
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21d915db314f442c087998973fd30e6f
-      internalID: 961793298
+      spriteID: 146cfcded76b34c929a9c495fa022ba2
+      internalID: 549043541
       vertices: []
       indices: 
       edges: []
@@ -134,14 +134,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cash_sprite_0: 961793298
+      empty_cash_0: 549043541
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
